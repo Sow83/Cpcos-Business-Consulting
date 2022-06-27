@@ -1,0 +1,30 @@
+.event-single{
+    &__div-color {
+        width: 11.5rem;
+        height: 11.5rem;
+    }
+    &__container-img{
+        max-width: 47.2rem;
+        margin: auto;
+    }
+    &__container-img::before{
+        content: "";
+        width: 90%;
+        height: 96.5%;
+        left: 49.5%;
+        transform: translateX(-50%);
+        top: 3.5%;
+        position: absolute;
+        border: 5px solid $white-color;
+        border-bottom: 0;
+    }
+    @media screen and (min-width: 1200px) {
+        &__div-color {
+            width: 13.2rem;
+            height: 13.2rem;
+        }
+        &__div-color-text{
+            font-size: 1.8rem;
+        }
+    }
+}

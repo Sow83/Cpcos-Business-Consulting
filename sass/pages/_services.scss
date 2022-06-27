@@ -1,0 +1,135 @@
+// Services  Program
+.program{
+    z-index: 1;
+    &__item-1::before{   
+        @include div-deco-rounded;
+        background: $blueAlice-color;
+        z-index: -1;
+        top: 5%;
+        left: 5%;
+    }
+    &__item-1::after{   
+        @include small-dotted;
+        top: 9%;
+        left: 6%;
+        display: none;
+    }
+    &__item-2::before{
+        @include div-deco-rounded;
+        background: $blueAlice-color;
+        z-index: -1;
+        top: 38%;
+        left: 34%;
+    }
+    &__item-4::before{
+        @include div-deco-rounded;
+        background: $yellowLemon-colorChiffon-color;
+        z-index: -2;
+        right: 6%;
+        top: 22%;
+    }
+    &__item-4::after{
+        @include small-dotted;
+        top: 18%;
+        right: 14%;
+        display: none;
+    }
+    &__container-img{
+        width: 6.2rem;
+        height: 6.4rem;
+    }
+    &__img{
+        width: 3.1rem;
+        height: 3.7rem;
+    }
+    &__user{
+        filter: invert(81%) sepia(30%) saturate(750%) hue-rotate(84deg) brightness(83%) contrast(86%);
+    }
+    &__darts{
+        filter: invert(70%) sepia(27%) saturate(849%) hue-rotate(349deg) brightness(93%) contrast(96%);
+    }
+    &__pulse{
+        filter: invert(35%) sepia(88%) saturate(702%) hue-rotate(211deg) brightness(103%) contrast(92%);
+    }
+    &__portfolio{
+        filter: invert(48%) sepia(29%) saturate(3695%) hue-rotate(197deg) brightness(97%) contrast(88%);
+    }
+    @media screen and (min-width: 1200px) {
+        &__item-1::after{   
+            display: block;
+        }
+        &__item-4::after{
+            display: block;
+        }       
+    }  
+    @media screen and (min-width: 1400px) {
+        max-width: 1700px;       
+    }    
+}
+
+// Sevices Presentation 
+.presentation{
+    &__coach:hover{
+        background: $blueCyan-color;
+        cursor: pointer;
+    }
+    &__white-div{
+        width: 5.7rem;
+        min-width: 5.7rem;
+        height: 5.6rem;
+    }
+    &__white-div::before{
+        content: "\2714";
+        color: $downyGreen-color;  
+        font-size: 2.5rem;
+    }
+    @media screen and (min-width: 1200px) {
+        &__container-img .presentation__img{
+            margin-top: -26.4rem;
+        }    
+    }   
+    @media screen and (min-width: 1400px) {
+        max-width: 1700px;       
+    }   
+}
+
+// Sercvices-contact
+.services-contact{
+    &__container-img::before{
+        content: "";
+        width: 100%;
+        height: 34%;
+        background: $yellowLemon-colorChiffon-color;
+        position: absolute;
+        top: 5%;
+        left: 0;
+        z-index: -1;
+        clip-path: polygon(100% 0, 100% 0%, 100% 100%, 0% 100%);     
+    }
+    &__container-img::after{
+        content: "";
+        width: 100%;
+        height: 61%;
+        background: $blueCyan-color;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+    &__sign-up::before{
+        content: "";
+        width: 68.4rem;
+        height: 68.4rem;
+        background:  $chileanHeath-color;
+        position: absolute;
+        z-index: -1;
+        border-radius: 50%;
+        left: -10%;
+    }
+    &__btn {
+        letter-spacing: .2rem;
+    }
+}
+
+
+

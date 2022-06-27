@@ -1,0 +1,31 @@
+{
+  "name": "cpcos-business-consulting",
+  "version": "1.0.0",
+  "description": "Conseil aux entreprises",
+  "main": "main.js",
+  "scripts": {
+    "sass": "sass --watch sass/main.scss:public/css/style.css --style compressed",
+    "prefix": "postcss public/css/style.css --use autoprefixer -d public/css/stylePrefixed",
+    "purge-css": "purgecss --css public/css/style.css --content *.html js/main.js -o public/css/cleanStyle"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": {
+    "name": "Mouhamadou Sow",
+    "email": "msow2512@gmail.com"
+  },
+  "license": "ISC",
+  "browserslist": "last 4 versions",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^9.1.0",
+    "purgecss": "^4.1.3",
+    "sass": "^1.53.0"
+  }
+}

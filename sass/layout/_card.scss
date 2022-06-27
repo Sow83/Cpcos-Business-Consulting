@@ -1,0 +1,31 @@
+// event
+.card-custom{
+    &:hover{
+        box-shadow: $box-shadow-lg;
+    }
+    &:hover 
+    &__link{
+        color: $primary;
+    }
+    &__link.link-blackcurrant-color:focus{
+        color: $primary;
+    }
+    &__title {
+        font-family: 'Lato', sans-serif!important;
+    }    
+    &__offres{
+        z-index: 1;
+    }
+    &__offres::after{
+        content: "";
+        background-image: url("../images/evenements/startup.svg");
+        width: 14.4rem;
+        height: 14.4rem;
+        position: absolute;
+        z-index: -1;
+        right: 97px;
+        top: 107px;
+        filter: invert(86%) sepia(15%) saturate(453%) hue-rotate(179deg) brightness(107%) contrast(98%);
+    }
+}
+

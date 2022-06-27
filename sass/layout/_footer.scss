@@ -1,0 +1,24 @@
+.footer{
+    &__social-icon{
+      width: 3rem;
+      height: 3rem;
+      transition: $transition-base;
+    }
+    &__social-icon-link:hover
+    &__social-icon{
+      transform: scale(1.5);
+      filter: invert(73%) sepia(24%) saturate(4687%) hue-rotate(335deg) brightness(106%) contrast(98%);
+    }
+    &__social-icon-link:focus
+    &__social-icon{
+      transform: scale(1.5);
+      filter: invert(73%) sepia(24%) saturate(4687%) hue-rotate(335deg) brightness(106%) contrast(98%);
+    }
+    &__link.link-blackcurrant-color{
+      transition: $transition-base;
+    }
+    &__link.link-blackcurrant-color:hover,
+    &__link.link-blackcurrant-color:focus{
+      color: $primary;
+    }
+}

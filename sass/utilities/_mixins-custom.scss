@@ -1,0 +1,15 @@
+@mixin div-deco-rounded {
+    content: "";
+    width: 42.5rem;
+    height: 42.5rem;
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+}
+@mixin small-dotted {
+    content: ""; 
+    background: url("../images/small-dotted-1.png") ;    
+    position: absolute;
+    width: 4.9rem;
+    height: 7.8rem; 
+}

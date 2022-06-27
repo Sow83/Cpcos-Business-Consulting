@@ -1,0 +1,38 @@
+.newsletter{
+    &__input::before{
+        content: "";
+        background: url("../images/services/enveloppe.svg");
+        background-repeat: no-repeat;
+        width: 2.2rem;
+        height: 1.65rem;
+        position: absolute;   
+        top: 28%;
+        left: 1rem;
+    }
+    &__img{
+        right: 20px;
+        top: 90px;
+    }
+    &__btn::before{
+        content: '';
+        border-style: solid;
+        border-width: 0.25rem 0.25rem 0 0;
+        display: inline-block;
+        width: 1.45rem;
+        height: 1.45rem;
+        transform: rotate(45deg);
+        color: $white-color;
+    } 
+    @media screen and (min-width: 992px) {
+        &__input::before{
+            top: 34%;           
+        } 
+        &__img{
+            top: -55px;  
+        }     
+    } 
+    @media screen and  (min-width: 1400px) {     
+        max-width: 1280px!important;    
+    }     
+}
+

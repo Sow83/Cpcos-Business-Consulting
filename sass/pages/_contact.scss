@@ -1,0 +1,26 @@
+.contact{
+    &__contact-us::after{
+        content: "";
+        width: 57.1rem;
+        height: 57.1rem;
+        background-color: $seashell-color;
+        position: absolute;
+        border-radius: 50%;
+        left: -21%;
+        top: 41%;
+        z-index: -1;
+    }
+    &__container-img{
+        width: 6rem;
+        min-width: 6rem;
+        height: 5.6rem;
+    }
+    &__img{
+        width: 3.1rem;
+        height: 3.1rem;
+    }
+    &__map{
+        filter: grayscale(100%);
+    }
+}
+

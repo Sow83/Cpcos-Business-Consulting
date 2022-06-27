@@ -1,0 +1,68 @@
+# --------------------------------------------------
+# Supprime l' "index.html" de l'url de la page d'accueil
+# --------------------------------------------------
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+RewriteRule ^index\.html$ https://cpcos-business-consulting.mouhamadousow.fr/ [R=301,L]
+</IfModule>
+
+# --------------------------------------------------
+# Supprime le ".html" des url de toutes les pages
+# --------------------------------------------------
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R]
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [NC,L]
+</IfModule>
+
+# --------------------------------------------------
+# Page d'erreur 404
+# --------------------------------------------------
+ErrorDocument 404 /error404.html
+
+# -----------------------------------------------------------------------------------
+# Ajouter des entetes expires pour accelerer le site
+# La mise en cache des fichiers sera effective pendant la durée spécifiée pour chaque 
+# type de fichier où jusqu’à ce que le visiteur vide son cache.
+# ----------------------------------------------------------------------------
+# BEGIN Expire headers
+ <IfModule mod_expires.c>
+ ExpiresActive On
+ ExpiresByType image/jpg "access plus 1 year"
+ ExpiresByType image/jpeg "access plus 1 year"
+ ExpiresByType image/gif "access plus 1 year"
+ ExpiresByType image/png "access plus 1 year"
+ ExpiresByType text/css "access plus 1 month"
+ ExpiresByType application/pdf "access plus 1 month"
+ ExpiresByType text/x-javascript "access plus 1 month"
+ ExpiresByType application/x-shockwave-flash "access plus 1 month"
+ ExpiresByType image/x-icon "access plus 1 year"
+ ExpiresDefault "access plus 7 days"
+ </IfModule>
+# END Expire headers
+
+# ---------------------------------------------------------
+# Le cache control est un complément de l’entetes expires
+# ---------------------------------------------------------
+<IfModule mod_headers.c>
+    Header set Connection keep-alive
+    <filesmatch "\.(ico|flv|gif|swf|eot|woff|otf|ttf|svg)$">
+        Header set Cache-Control "max-age=2592000, public"
+    </filesmatch>
+    <filesmatch "\.(jpg|jpeg|png)$">
+        Header set Cache-Control "max-age=1209600, public"
+    </filesmatch>
+    # css and js should use private for proxy caching https://developers.google.com/speed/docs/best-practices/caching#LeverageProxyCaching
+    <filesmatch "\.(css)$">
+        Header set Cache-Control "max-age=31536000, private"
+    </filesmatch>
+    <filesmatch "\.(js)$">
+        Header set Cache-Control "max-age=1209600, private"
+    </filesmatch>
+    <filesMatch "\.(x?html?|php)$">
+        Header set Cache-Control "max-age=600, private, must-revalidate"
+      </filesMatch>
+</IfModule>

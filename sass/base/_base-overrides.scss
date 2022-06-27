@@ -1,0 +1,20 @@
+/* Pour faciliter faciliter le calcul. Je vais faire 1rem = 10px (voir $spacer du partiel _utilities-custom.scss)
+ * Étant donné que Bootstrap a défini la taille de la police de base sur 1rem,
+ * ce qui est égale à 16px, nous devons mettre à jour cette variable 
+ * afin que la taille de la police reste à 16px même si la valeur de pixel 
+ * de 1rem a été modifiée. Donc dans le partiel "_utilities-custom.scss" je vais faire: $font-size-base: 1.6rem
+ */
+html{
+    font-size: 62.5%; // => 1rem = 10px
+}
+
+// Supprime la barre horizontal créée par le débordement des éléments
+html, body{
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  section h1{
+     font-size: 6rem;
+   }
+}

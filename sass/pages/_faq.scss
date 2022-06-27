@@ -1,0 +1,35 @@
+.faq{
+    &__row-card::before,
+    &__row-card::after{
+        content: "";
+        background-image: url("../images/small-dotted.png");
+        width: 10.6rem;
+        height: 7rem;
+        position: absolute;
+    }
+    &__row-card::before{
+       left: -1.9rem;
+    }
+    &__row-card::after{
+       right: -1.9rem;
+    }
+    &__card-img{
+        width: 7.8rem;
+        height: 7.8rem;
+    }
+    &__card-teamwork-img{
+        filter: invert(61%) sepia(52%) saturate(1781%) hue-rotate(171deg) brightness(97%) contrast(97%);
+    }
+    &__card-challenge-img{
+        filter: invert(76%) sepia(40%) saturate(648%) hue-rotate(92deg) brightness(84%) contrast(89%);
+    }
+    &__card-customer-img{
+        filter: invert(83%) sepia(40%) saturate(645%) hue-rotate(2deg) brightness(91%) contrast(100%);
+    }
+    & .accordion-button:not(.collapsed){
+        font-weight: 700;
+    }   
+    & .accordion-button:focus{
+        border: 2px solid $blackcurrant-color;
+    }
+}
